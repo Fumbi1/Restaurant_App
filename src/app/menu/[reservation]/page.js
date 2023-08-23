@@ -1,5 +1,5 @@
 "use client";
-import "./pagee.css";
+import "./reservation.css";
 import Link from "next/link";
 import React, { useState } from "react";
 import { useParams, useRouter } from "next/navigation";
@@ -43,7 +43,7 @@ const Reservation = ({ params }) => {
           console.log(params);
         }}
       >
-        <div className="menu_left">
+        <div className="menu_left2">
           <div className="header">
             <p className="header_text">nique.</p>
           </div>

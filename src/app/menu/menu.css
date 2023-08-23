@@ -50,14 +50,13 @@ img {
 .menu_left {
   padding-block: 4rem;
   width: 50%;
-  height: fit-content;
   background: url("/menu.png") #050505;
   background-position: top;
   background-repeat: no-repeat;
   background-attachment: local;
   filter: brightness(150%);
-  max-height: 100vh;
-  overflow-y: scroll;
+  height: 100vh;
+  overflow-y: auto;
   scroll-behavior: smooth;
 }
 
@@ -202,7 +201,7 @@ img {
 
 .menu_right {
   width: 50%;
-  max-height: 100vh;
+  height: 100vh;
   overflow-y: scroll;
   scroll-behavior: smooth;
 }
@@ -378,7 +377,7 @@ img {
     display: flex;
     flex-direction: row;
     color: #fff;
-    width: 90%;
+    width: 80%;
     margin-inline: auto;
     justify-content: space-between;
   }
@@ -396,20 +395,19 @@ img {
   .menu_left {
     padding-block: 4rem;
     width: 100%;
-    height: fit-content;
     background: url(/menu.png) #050505;
     background-position: top;
     background-repeat: no-repeat;
     background-attachment: local;
-    overflow-y: none;
-    height: 100%;
+    height: fit-content;
+    overflow-y: clip;
     filter: brightness(150%);
   }
 
   .menu_right {
     width: 100%;
-    overflow-y: none;
     height: 100%;
+    overflow-y: clip;
   }
 
 }

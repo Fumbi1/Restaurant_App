@@ -1,5 +1,6 @@
 @import url("https://fonts.cdnfonts.com/css/chillax");
 
+
 * {
   margin: 0;
   padding: 0;
@@ -43,16 +44,15 @@ img {
   flex-direction: row;
 }
 
-.menu_left {
+.menu_left2 {
   padding-block: 4rem;
   width: 50%;
-  height: fit-content;
-  background: url("/latestnews.png") #050505;
+  background: url("/reserve.png") #050505;
   background-position: top;
   background-repeat: no-repeat;
   background-attachment: local;
   filter: brightness(150%);
-  max-height: 100vh;
+  height: 100vh;
   overflow-y: scroll;
   scroll-behavior: smooth;
 }
@@ -131,7 +131,7 @@ img {
 }
 
 .option_tn2:hover {
-  background: #3dff02;
+  background: #7802ff;
 }
 
 .option_text2 {
@@ -196,108 +196,100 @@ img {
   line-height: 160%;
 }
 
-.blog_right {
+.form_left {
   width: 50%;
   padding: 6rem 5rem;
-  height: 100vh;
+  color: white;
   overflow-y: auto;
+  height: 100vh;
 }
 
-.blog_opt {
-  color: #fff;
-  display: flex;
-  flex-direction: row;
-  gap: 2rem;
-  margin: 1.5rem 2rem;
-  padding-top: 0.375rem;
-  padding-inline: 0.75rem;
-  transition: all 750ms;
-}
-
-.blog_opt:hover{
-    background-color: #807771;
-    border-radius: 0.625rem;
-    filter: brightness(75%);
-}
-
-.image_container {
-  margin-block: auto;
-}
-
-.blog_image {
-  border-radius: 0.5rem;
-}
-
-.blog_news {
-  width: 50%;
-}
-
-.date {
-  color: #face8d;
+.book_table {
   font-family: Chillax;
-  font-size: clamp(0.5rem, 0.1797rem + 0.7813vw, 1rem);
-  font-style: normal;
-  font-weight: 400;
-  line-height: 160%;
-}
-
-.blog_title {
-  color: #fff;
-  font-family: Chillax;
-  font-size: clamp(1rem, 0.6797rem + 0.7813vw, 1.5rem);
+  font-size: clamp(1.625rem, -1.8235rem + 8.2353vw, 2.5rem);
   font-style: normal;
   font-weight: 500;
-  line-height: 160%;
+  line-height: 100%;
 }
 
-.blog_content {
-  color: #fff;
+.desc {
+  color: rgba(255, 255, 255, 0.8);
   font-family: Chillax;
-  font-size: clamp(0.5rem, 0.1797rem + 0.7813vw, 1rem);
+  font-size: clamp(0.6rem, -1.9618rem + 6.1176vw, 1.25rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+  margin-block: 1rem 3rem;
+}
+
+.guests {
+  margin-bottom: 3rem;
+}
+
+.guests_flex {
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.tittle {
+  color: rgba(255, 255, 255, 0.8);
+  font-family: Chillax;
+  font-size: clamp(0.5rem, 0.4043rem + 0.5674vw, 1rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+  margin-bottom: 1rem;
+}
+
+input {
+  padding: 1rem;
+  font-size: clamp(0.6rem, -1.4691rem + 4.9412vw, 1.125rem);
+  font-style: normal;
+  background-color: transparent;
+  font-weight: 400;
+  line-height: 160%;
+  color: #fff;
+  width: 100%;
+  border-radius: 0.625rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+input::placeholder {
+  background-color: transparent;
+  font-family: Chillax;
+  font-size: clamp(0.6rem, -1.4691rem + 4.9412vw, 1.125rem);
   font-style: normal;
   font-weight: 400;
   line-height: 160%;
 }
 
-.footer {
-    margin-block: 5rem;
-    display: flex;
-    flex-direction: row;
-    color: #fff;
-    width: 100%;
-    margin-inline: auto;
-    justify-content: space-between;
+input:focus {
+  color: #fff;
+  background-color: transparent;
+  outline: none;
+  font-family: Chillax;
+  font-size: clamp(0.6rem, -1.4691rem + 4.9412vw, 1.125rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
 }
-  
-.footer_logo {
-    color: #fff;
-    font-family: Chillax;
-    font-size: clamp(1.5rem, -0.4706rem + 4.7059vw, 2rem);
-    font-style: normal;
-    font-weight: 500;
-    line-height: 90%;
-    margin-bottom: 1rem;
-}
-  
-.footer_title {
-    color: #fff;
-    font-family: Chillax;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 160%;
-    margin-bottom: 1rem;
-}
-  
-.footer_opts {
-    color: #fff;
-    font-family: Chillax;
-    font-size: clamp(0.575rem, -0.4103rem + 2.3529vw, 0.825rem);
-    font-style: normal;
-    font-weight: 400;
-    line-height: 140%;
-    opacity: 0.6;
-    margin-top: 1rem;
+
+button {
+  width: 100%;
+  border: none;
+  border-radius: 31.25rem;
+  background: #f8d49e;
+  color: #081212;
+  font-family: Chillax;
+  font-size: clamp(0.5rem, 0.4043rem + 0.5674vw, 1rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0.0625rem;
+  text-transform: uppercase;
+  padding-block: 1rem;
 }
 
 @media (max-width: 1270px) {
@@ -329,38 +321,6 @@ img {
   }
 }
 
-@media (max-width: 1120px) {
-  .blog_opt {
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    margin: 1.5rem 2rem;
-  }
-
-  .blog_news {
-    width: 100%;
-  }
-
-  .blog_opt {
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    margin: 4rem 2rem;
-  }
-
-  .footer {
-    margin-block: 5rem;
-    display: flex;
-    flex-direction: row;
-    color: #fff;
-    width: 100%;
-    margin-inline: auto;
-    gap: 1.5rem;
-}
-}
-
 @media (max-width: 670px) {
   .menu_page {
     background-color: #000;
@@ -370,57 +330,21 @@ img {
     flex-direction: column;
   }
 
-  .menu_left {
+  .menu_left2{
     padding-block: 4rem;
     width: 100%;
     height: fit-content;
-    background: url(/menu.png) #050505;
+    background: url("/reserve.png") #050505;
     background-position: top;
     background-repeat: no-repeat;
     background-attachment: local;
-    overflow-y: none;
-    height: 100%;
+    overflow-y: clip;
     filter: brightness(150%);
   }
 
-  .blog_right {
+  .form_left {
     width: 100%;
-    overflow-y: none;
-    height: 100%;
-    padding: 3rem 2.5rem;
+    height: fit-content;
+    overflow-y: clip;
   }
-
-  .blog_opt {
-    color: #fff;
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    margin: 1.5rem 2rem;
-  }
-
-  .blog_news {
-    width: 50%;
-  }
-}
-
-@media (max-width: 520px) {
-    .blog_opt {
-        color: #fff;
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-        margin: 1.5rem 2rem;
-    }
-
-    .blog_news {
-        width: 100%;
-    }
-
-    .blog_opt {
-        color: #fff;
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-        margin: 4rem 2rem;
-    }
 }

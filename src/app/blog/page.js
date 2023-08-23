@@ -1,5 +1,5 @@
 "use client";
-import "./pageee.css";
+import "./blog.css";
 import Link from "next/link";
 import React, { useState } from "react";
 
@@ -46,7 +46,7 @@ const Log = () => {
 
   return <div>
     <main className="menu_page">
-        <div className="menu_left">
+        <div className="menu_left3">
             <div className="header">
                 <p className="header_text">nique.</p>
             </div>
