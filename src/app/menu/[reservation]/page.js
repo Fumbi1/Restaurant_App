@@ -55,7 +55,7 @@ const Reservation = ({ params }) => {
             </p>
           </div>
 
-          <div className="options">
+          <div className="optionsaa">
             <div className="option_tn">
               <Link href="/">
                 <img className="clock" src="/clock.png" alt="" />
@@ -100,7 +100,58 @@ const Reservation = ({ params }) => {
               </div>
             </div>
           </div>
+
         </div>
+
+
+
+        <div className="optionsaltt">
+          <div className="option_tn">
+            <Link href="/">
+              <img className="clock" src="/clock.png" alt="" />
+            </Link>
+          </div>
+
+          <div className="option_tn">
+            <Link className="options_text" href="/menu">
+              Menu
+            </Link>
+          </div>
+
+          <div className="option_tn">
+            <Link className="options_text" href="/blog">
+              Blog
+            </Link>
+          </div>
+
+          <div className="option_tn">
+            <Link className="options_text" href="">
+              Classes
+            </Link>
+          </div>
+
+          <div className="option_tn2" onClick={Change}>
+            <p className="option_text2">BOOK A TABLE</p>
+          </div>
+
+          <div className={classPd ? "option_hover" : "option_hover2"}>
+            <p className="opening">Opening Hours</p>
+            <div className="hover_div">
+              <p>Mon</p>
+              <p>closed</p>
+            </div>
+            <div className="hover_div">
+              <p>Tue - Fri</p>
+              <p>4pm - 8pm</p>
+            </div>
+            <div className="hover_div">
+              <p>Sat- Sun</p>
+              <p>5pm - 11pm</p>
+            </div>
+          </div>
+        </div>
+
+
 
         <div className="form_left">
           <form onSubmit={TakenOrder}>
@@ -122,7 +173,7 @@ const Reservation = ({ params }) => {
                 Number of guests
               </label>
               <br />
-              <input type="text" placeholder="2" required />
+              <input type="number" placeholder="2" required />
             </div>
 
             <div className="guests_flex">
@@ -131,7 +182,7 @@ const Reservation = ({ params }) => {
                   Date
                 </label>
                 <br />
-                <input type="text" placeholder="19.08.22" required />
+                <input type="date" placeholder="19.08.22" required />
               </div>
 
               <div>
@@ -139,7 +190,7 @@ const Reservation = ({ params }) => {
                   Time
                 </label>
                 <br />
-                <input type="text" placeholder="6:00pm" required />
+                <input type="time" placeholder="6:00pm" required />
               </div>
             </div>
 

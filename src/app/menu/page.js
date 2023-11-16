@@ -126,7 +126,6 @@ const Menu = () => {
     },
   ];
 
-
   return (
     <div>
       <main className="menu_page">
@@ -142,7 +141,7 @@ const Menu = () => {
             </p>
           </div>
 
-          <div className="options">
+          <div className="optionsa">
             <div className="option_tn">
               <Link href="/">
                 <img className="clock" src="/clock.png" alt="" />
@@ -189,6 +188,52 @@ const Menu = () => {
           </div>
         </div>
 
+        <div className="optionsalt">
+          <div className="option_tn">
+            <Link href="/">
+              <img className="clock" src="/clock.png" alt="" />
+            </Link>
+          </div>
+
+          <div className="option_tn">
+            <Link className="options_text" href="">
+              Menu
+            </Link>
+          </div>
+
+          <div className="option_tn">
+            <Link className="options_text" href="/blog">
+              Blog
+            </Link>
+          </div>
+
+          <div className="option_tn">
+            <Link className="options_text" href="">
+              Classes
+            </Link>
+          </div>
+
+          <div className="option_tn2" onClick={Change}>
+            <p className="option_text2">BOOK A TABLE</p>
+          </div>
+
+          <div className={classPd ? "option_hover" : "option_hover2"}>
+            <p className="opening">Opening Hours</p>
+            <div className="hover_div">
+              <p>Mon</p>
+              <p>closed</p>
+            </div>
+            <div className="hover_div">
+              <p>Tue - Fri</p>
+              <p>4pm - 8pm</p>
+            </div>
+            <div className="hover_div">
+              <p>Sat- Sun</p>
+              <p>5pm - 11pm</p>
+            </div>
+          </div>
+        </div>
+
         <div className="menu_right">
           {menuList.map((item, index) => {
             return (
@@ -197,8 +242,7 @@ const Menu = () => {
                   <p>{item.title}</p>
                 </div>
                 <Link className="links" href={"/menu/" + item.meal}>
-                  <div
-                    className="content">
+                  <div className="content">
                     <div>
                       <img className="mealimage" src={item.image} alt="" />
                     </div>
