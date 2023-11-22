@@ -1,24 +1,25 @@
+
 "use client";
-import "./page.css";
+import "./classes.css"
 import Link from "next/link";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 
-const Home = () => {
+const Classes = () => {
   const [classPd, setClassPd] = React.useState(true);
-  const Routerr = useRouter()
-
-  const Change = () => {
-    setClassPd(!classPd);
-  };
+  const Routerr = useRouter();
 
   function handleGoBack() {
     Routerr.back();
   }
 
+  const Change = () => {
+    setClassPd(!classPd);
+  };
+
   return (
     <div>
-      <main className="background_image">
+      <main className="background_image2">
         <div className="header">
           <p className="header_text" onClick={() => {
             Routerr.push("/");
@@ -27,20 +28,16 @@ const Home = () => {
 
         <div className="intro">
           <p className="intro_text1">
-            The pure taste of <br/><span className="span1">Thailand</span>
+            Coming <br/><span className="span1">Soon...</span>
           </p>
 
-          <p className="intro_text2">
-            Lorem ipsum dolor sit amet, consectetur adipiscing <br/> elit, sed do
-            eiusmod tempor incididunt ut labore.
-          </p>
+          
         </div>
 
         <div className="options">
           <div className="option_tn">
-          
+            
             <img src="/clock.png" alt="" onClick={handleGoBack} />
-          
           </div>
 
           <div className="option_tn">
@@ -85,4 +82,4 @@ const Home = () => {
     </div>
   );
 };
-export default Home;
+export default Classes;

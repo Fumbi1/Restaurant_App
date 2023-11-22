@@ -2,19 +2,25 @@
 import "./menu.css";
 import Link from "next/link";
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const Menu = () => {
   const [classPd, setClassPd] = React.useState(true);
+  const Routerr = useRouter()
 
   const Change = () => {
     setClassPd(!classPd);
   };
 
+  function handleGoBack() {
+    Routerr.back();
+  }
+
   const menuList = [
     {
       title: "Starters",
       image: "/tomato_toast.png",
-      meal: "Tomato Toast",
+      meal: "Tomato-Toast",
       desc: "Lorem ipsum dolor sit amet, consectetur",
       oldPrice: "$35.00",
       price: "$29",
@@ -22,7 +28,7 @@ const Menu = () => {
     {
       title: "",
       image: "/noodle_soup.png",
-      meal: "Noodle Soup",
+      meal: "Noodle-Soup",
       desc: "Lorem ipsum dolor sit amet, consectetur",
       oldPrice: "$8.00",
       price: "$5.00",
@@ -30,7 +36,7 @@ const Menu = () => {
     {
       title: "",
       image: "/pumpki.png",
-      meal: "Pumpkin Soup",
+      meal: "Pumpkin-Soup",
       desc: "Lorem ipsum dolor sit amet, consectetur",
       oldPrice: "$11.00",
       price: "$5.00",
@@ -39,7 +45,7 @@ const Menu = () => {
       title: "",
       title: "Breakfast",
       image: "/pancakes.png",
-      meal: "Delicious Pancakes",
+      meal: "Delicious-Pancakes",
       desc: "Lorem ipsum dolor sit amet, consectetur",
       oldPrice: "$8.00",
       price: "$5.00",
@@ -47,7 +53,7 @@ const Menu = () => {
     {
       title: "",
       image: "/heaven.png",
-      meal: "Sweet Heaven",
+      meal: "Sweet-Heaven",
       desc: "Lorem ipsum dolor sit amet, consectetur",
       oldPrice: "$8.00",
       price: "$5.00",
@@ -55,7 +61,7 @@ const Menu = () => {
     {
       title: "",
       image: "/oatmeal.png",
-      meal: "Oatmeal Spirit",
+      meal: "Oatmeal-Spirit",
       desc: "Lorem ipsum dolor sit amet, consectetur",
       oldPrice: "$8.50",
       price: "$5.00",
@@ -63,7 +69,7 @@ const Menu = () => {
     {
       title: "",
       image: "/avocado.png",
-      meal: "Avocado Smash",
+      meal: "Avocado-Smash",
       desc: "Lorem ipsum dolor sit amet, consectetur",
       oldPrice: "$10.00",
       price: "$5.00",
@@ -71,7 +77,7 @@ const Menu = () => {
     {
       title: "Dinner",
       image: "/italian_pizza.png",
-      meal: "Italian Pizza",
+      meal: "Italian-Pizza",
       desc: "Lorem ipsum dolor sit amet, consectetur",
       oldPrice: "$8.00",
       price: "$5.00",
@@ -79,7 +85,7 @@ const Menu = () => {
     {
       title: "",
       image: "/curry.png",
-      meal: "Sea Curry",
+      meal: "Sea-Curry",
       desc: "Lorem ipsum dolor sit amet, consectetur",
       oldPrice: "$9.50",
       price: "$5.00",
@@ -87,7 +93,7 @@ const Menu = () => {
     {
       title: "",
       image: "/vegan.png",
-      meal: "Vegan Burger",
+      meal: "Vegan-Burger",
       desc: "Lorem ipsum dolor sit amet, consectetur",
       oldPrice: "$8.00",
       price: "$5.00",
@@ -95,7 +101,7 @@ const Menu = () => {
     {
       title: "",
       image: "/noodle.png",
-      meal: "Noodle Bowl",
+      meal: "Noodle-Bowl",
       desc: "Lorem ipsum dolor sit amet, consectetur",
       oldPrice: "$8.00",
       price: "$5.00",
@@ -103,7 +109,7 @@ const Menu = () => {
     {
       title: "Drinks",
       image: "/panthouse.png",
-      meal: "Panthouse Tonic",
+      meal: "Panthouse-Tonic",
       desc: "Lorem ipsum dolor sit amet, consectetur",
       oldPrice: "$8.00",
       price: "$5.00",
@@ -111,7 +117,7 @@ const Menu = () => {
     {
       title: "",
       image: "/apple_drink.png",
-      meal: "Apple Breeze",
+      meal: "Apple-Breeze",
       desc: "Lorem ipsum dolor sit amet, consectetur",
       oldPrice: "$8.00",
       price: "$5.00",
@@ -119,7 +125,7 @@ const Menu = () => {
     {
       title: "",
       image: "/frenchman.png",
-      meal: "Frenchman Blitz",
+      meal: "Frenchman-Blitz",
       desc: "Lorem ipsum dolor sit amet, consectetur",
       oldPrice: "$8.00",
       price: "$5.00",
@@ -131,7 +137,9 @@ const Menu = () => {
       <main className="menu_page">
         <div className="menu_left">
           <div className="header">
-            <p className="header_text">nique.</p>
+            <p className="header_text" onClick={() => {
+            Routerr.push("/");
+          }}>nique.</p>
           </div>
 
           <div className="menu">
@@ -143,13 +151,13 @@ const Menu = () => {
 
           <div className="optionsa">
             <div className="option_tn">
-              <Link href="/">
-                <img className="clock" src="/clock.png" alt="" />
-              </Link>
+              
+              <img className="clock" src="/clock.png" alt="" onClick={handleGoBack}/>
+            
             </div>
 
             <div className="option_tn">
-              <Link className="options_text" href="">
+              <Link className="options_text" href="/menu">
                 Menu
               </Link>
             </div>
@@ -161,7 +169,7 @@ const Menu = () => {
             </div>
 
             <div className="option_tn">
-              <Link className="options_text" href="">
+              <Link className="options_text" href="/classes">
                 Classes
               </Link>
             </div>
@@ -190,13 +198,13 @@ const Menu = () => {
 
         <div className="optionsalt">
           <div className="option_tn">
-            <Link href="/">
-              <img className="clock" src="/clock.png" alt="" />
-            </Link>
+            
+            <img className="clock" src="/clock.png" alt="" onClick={handleGoBack} />
+            
           </div>
 
           <div className="option_tn">
-            <Link className="options_text" href="">
+            <Link className="options_text" href="/menu">
               Menu
             </Link>
           </div>
@@ -208,7 +216,7 @@ const Menu = () => {
           </div>
 
           <div className="option_tn">
-            <Link className="options_text" href="">
+            <Link className="options_text" href="/classes">
               Classes
             </Link>
           </div>
@@ -241,7 +249,7 @@ const Menu = () => {
                 <div className={item.title == "" ? "title" : "title2"}>
                   <p>{item.title}</p>
                 </div>
-                <Link className="links" href={"/menu/" + item.meal}>
+                <Link className="links" href={"/menu/" + (item.meal)}>
                   <div className="content">
                     <div>
                       <img className="mealimage" src={item.image} alt="" />

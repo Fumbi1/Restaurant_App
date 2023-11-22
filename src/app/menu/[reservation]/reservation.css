@@ -33,6 +33,7 @@ img {
   font-weight: 500;
   line-height: 90%;
   text-align: center;
+  cursor: pointer;
 }
 
 .menu_page {
@@ -63,11 +64,11 @@ img {
   margin-block: 20.88rem 21.5rem;
 }
 
-@font-face {
+/* @font-face {
   font-family: MyFont;
   src: url(/public/bitterrose/Font/Bitter\ Rose.ttf);
   font-weight: 400;
-}
+} */
 
 .menu_text1 {
   font-family: MyFont, san-serif;
@@ -293,6 +294,7 @@ button {
   letter-spacing: 0.0625rem;
   text-transform: uppercase;
   padding-block: 1rem;
+  cursor: pointer;
 }
 
 @media (max-width: 1270px) {

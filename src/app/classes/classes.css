@@ -20,13 +20,13 @@ img {
   display: none;
 }
 
-.background_image {
+.background_image2 {
   width: 100%;
   height: 100%;
-  background: url("/home1.png"), #050505;
+  background: url("/class.png"), #050505;
   background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-repeat: repeat;
+  background-size: contain;
   filter: brightness(150%);
   padding-block: 2rem;
 }

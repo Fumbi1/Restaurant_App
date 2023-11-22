@@ -9,10 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.3.2",
     "@sweetalert2/theme-dark": "^5.0.15",
     "next": "13.4.15",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "sweetalert2": "^11.7.27"
+    "react-hook-form": "^7.48.2",
+    "sweetalert2": "^11.7.27",
+    "zod": "^3.22.4"
   }
 }

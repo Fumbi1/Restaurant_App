@@ -1,27 +1,30 @@
 "use client";
 import "./reservation.css";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useParams, useRouter } from "next/navigation";
-import Swal from 'sweetalert2';
+import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
 
 const Reservation = ({ params }) => {
   const [classPd, setClassPd] = React.useState(true);
+    //another way of using params instead of passing params as an parameter
+    const param = useParams();
+    const abortControllerRef = useRef(null);
 
-  const Change = () => {
-    setClassPd(!classPd);
-  };
-
-  //another way of using params instead of passing params as an parameter
-  const param = useParams();
-
-  //to automatically change routes
+    //to automatically change routes
   const route = useRouter();
 
-  const TakenOrder = (e) => {
-    e.preventDefault();
+  function handleGoBack() {
+    route.back();
+  }
+
+  const TakenOrder = () => {
+
     Swal.fire({
-      title: "Table has been booked! 😉",
+      title: "Check your mail for your unique code! 😉",
       text: "You'd be redirected to the home page",
       icon: "success",
       confirmButtonText: "Cool",
@@ -34,6 +37,84 @@ const Reservation = ({ params }) => {
     }, 3000);
   };
 
+  const reserveSchema = z.object({
+    name: z.string().min(2, { message: "Name must be more than 2 characters" }),
+    email: z.string().email(),
+    guest_number: z.string().min(1, {message: "Please specify the numer of guests"}).max(1,{message: "A maximum of 9 guests are allowed"}),
+    // chosenMenu: z.string().min().max(),
+    date: z.string(),
+    time: z.string(),
+  });
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+    // getValues, => used to ensure password is the same as confirmPassword
+  } = useForm({
+    resolver: zodResolver(reserveSchema),
+    defaultValues: {
+      chosenMenu: param.reservation,
+    },
+  });
+
+  const Change = () => {
+    setClassPd(!classPd);
+  };
+
+
+
+  
+
+  const onSubmit = async (data) => {
+    console.log(data);
+    const String = JSON.stringify(data);
+    console.log(String);
+    const mainUrl = "https://restaurant-u8pf.onrender.com";
+    const Menu = `${mainUrl}/restaurant/`;
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+      signal: abortControllerRef.current?.signal,
+    };
+
+    abortControllerRef.current?.abort();
+    abortControllerRef.current = new AbortController();
+
+    try {
+      const response = await fetch(Menu, options);
+      console.log(response);
+      TakenOrder();
+      reset();
+    } catch (error) {
+      console.log(error);
+      Swal.fire({
+        title: "An Error occurred  😢",
+        text: "Please try again",
+        icon: "error",
+        confirmButtonText: "I no dey give up",
+        background: "red",
+        color: "white",
+        timer: 3250,
+      });
+      reset();
+      if (error.name === "AbortError") {
+        console.log("Aborted");
+        return;
+      }
+    } finally {
+      reset();
+    }
+  }
+
+
+  
+
+
   return (
     <div>
       <main
@@ -45,7 +126,9 @@ const Reservation = ({ params }) => {
       >
         <div className="menu_left2">
           <div className="header">
-            <p className="header_text">nique.</p>
+            <p className="header_text" onClick={() => {
+            route.push("/");
+          }}>nique.</p>
           </div>
 
           <div className="menu">
@@ -57,9 +140,9 @@ const Reservation = ({ params }) => {
 
           <div className="optionsaa">
             <div className="option_tn">
-              <Link href="/">
-                <img className="clock" src="/clock.png" alt="" />
-              </Link>
+              
+                <img className="clock" src="/clock.png" alt=""onClick={handleGoBack} />
+              
             </div>
 
             <div className="option_tn">
@@ -75,7 +158,7 @@ const Reservation = ({ params }) => {
             </div>
 
             <div className="option_tn">
-              <Link className="options_text" href="">
+              <Link className="options_text" href="/classes">
                 Classes
               </Link>
             </div>
@@ -100,16 +183,13 @@ const Reservation = ({ params }) => {
               </div>
             </div>
           </div>
-
         </div>
-
-
 
         <div className="optionsaltt">
           <div className="option_tn">
-            <Link href="/">
-              <img className="clock" src="/clock.png" alt="" />
-            </Link>
+            
+            <img className="clock" src="/clock.png" alt="" onClick={handleGoBack}/>
+            
           </div>
 
           <div className="option_tn">
@@ -125,7 +205,7 @@ const Reservation = ({ params }) => {
           </div>
 
           <div className="option_tn">
-            <Link className="options_text" href="">
+            <Link className="options_text" href="./classes">
               Classes
             </Link>
           </div>
@@ -151,10 +231,8 @@ const Reservation = ({ params }) => {
           </div>
         </div>
 
-
-
         <div className="form_left">
-          <form onSubmit={TakenOrder}>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <p className="book_table">Book a table</p>
             <p className="desc">
               Our dining atmosphere is casual and comfortable. To <br />
@@ -162,35 +240,92 @@ const Reservation = ({ params }) => {
             </p>
 
             <div className="guests">
-              <label for="" className="tittle">
+              <label className="tittle">
                 Name
               </label>
               <br />
-              <input type="text" placeholder="name" required />
+              <input
+                {...register("name")}
+                type="text"
+                placeholder=""
+              
+              />
+              {errors.name && (
+                <p className="tittle">{`${errors.name?.message}`}</p>
+              )}
             </div>
+
             <div className="guests">
-              <label for="" className="tittle">
+              <label className="tittle">
+                Email
+              </label>
+              <br />
+              <input
+                {...register("email")}
+                type="email"
+                placeholder="shege@gmail.com"
+                id="email"
+              />
+              {errors.email && (
+                <p className="tittle">{`${errors.email?.message}`}</p>
+              )}
+            </div>
+
+            <div className="guests">
+              <label htmlFor="chosenMenu" className="tittle">
+                Menu
+              </label>
+              <br />
+              <input
+                {...register("chosenMenu")}
+                type="text"
+                disabled
+                id="chosenMenu"
+              />
+            </div>
+
+            <div className="guests">
+              <label htmlFor="guest_number" className="tittle">
                 Number of guests
               </label>
               <br />
-              <input type="number" placeholder="2" required />
+              <input
+                {...register("guest_number", {
+                  type: "guest_number",
+                })}
+                type="number"
+                id="guest_number"
+              />
+              {errors.guest_number && (
+                <p className="tittle">{`${errors.guest_number?.message}`}</p>
+              )}
             </div>
 
             <div className="guests_flex">
               <div>
-                <label for="" className="tittle">
+                <label htmlFor="date" className="tittle">
                   Date
                 </label>
                 <br />
-                <input type="date" placeholder="19.08.22" required />
+                <input
+                  {...register("date")}
+                  type="date"
+                  placeholder="19.08.22"
+                  id="date"
+                />
               </div>
 
               <div>
-                <label for="" className="tittle">
+                <label htmlFor="time" className="tittle">
                   Time
                 </label>
                 <br />
-                <input type="time" placeholder="6:00pm" required />
+                <input
+                  {...register("time")}
+                  type="time"
+                  placeholder="6:00pm"
+                  id="time"
+                />
               </div>
             </div>
 

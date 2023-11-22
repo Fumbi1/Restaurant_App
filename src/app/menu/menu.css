@@ -37,6 +37,7 @@ img {
   font-weight: 500;
   line-height: 90%;
   text-align: center;
+  cursor: pointer;
 }
 
 .menu_page {
@@ -67,11 +68,11 @@ img {
   margin-block: 20.88rem 21.5rem;
 }
 
-@font-face {
+/* @font-face {
   font-family: MyFont;
   src: url(/public/bitterrose/Font/Bitter\ Rose.ttf);
   font-weight: 400;
-}
+} */
 
 .menu_text1 {
   font-family: MyFont, san-serif;
@@ -121,7 +122,7 @@ img {
 
 .options_text {
   font-family: Chillax;
-  font-size: clamp(0.5rem, 0.4043rem + 0.5674vw, 1rem);
+  font-size: clamp(0.625rem, 0.3848rem + 0.5859vw, 1rem);
   font-style: normal;
   font-weight: 500;
   line-height: 100%;
@@ -144,7 +145,7 @@ img {
 .option_text2 {
   color: #fff;
   font-family: Chillax;
-  font-size: clamp(0.5rem, 0.4043rem + 0.5674vw, 1rem);
+  font-size: clamp(0.625rem, 0.3848rem + 0.5859vw, 1rem);
   font-style: normal;
   font-weight: 500;
   line-height: 100%;

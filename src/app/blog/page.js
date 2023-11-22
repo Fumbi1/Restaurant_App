@@ -2,14 +2,20 @@
 import "./blog.css";
 import Link from "next/link";
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const Log = () => {
 
     const [classPd, setClassPd] = React.useState(true);
+    const Routerr = useRouter();
 
     const Change = () => {
     setClassPd(!classPd);
     };
+
+    function handleGoBack() {
+      Routerr.back();
+    }
 
     const blogs = [
         {
@@ -48,7 +54,9 @@ const Log = () => {
     <main className="menu_page">
         <div className="menu_left3">
             <div className="header">
-                <p className="header_text">nique.</p>
+                <p className="header_text" onClick={() => {
+            Routerr.push("/");
+          }}>nique.</p>
             </div>
 
             <div className="menu">
@@ -60,9 +68,9 @@ const Log = () => {
 
             <div className="optionss">
                 <div className="option_tn">
-                <Link href="/">
-                    <img className="clock" src="/clock.png" alt="" />
-                </Link>
+               
+                  <img className="clock" src="/clock.png" alt="" onClick={handleGoBack} />
+                
                 </div>
 
                 <div className="option_tn">
@@ -107,9 +115,9 @@ const Log = () => {
 
         <div className="optionsalt">
           <div className="option_tn">
-            <Link href="/">
-              <img className="clock" src="/clock.png" alt="" />
-            </Link>
+            
+            <img className="clock" src="/clock.png" alt="" onClick={handleGoBack} />
+            
           </div>
 
           <div className="option_tn">
