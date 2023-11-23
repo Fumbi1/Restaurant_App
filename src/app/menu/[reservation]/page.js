@@ -10,9 +10,10 @@ import { z } from "zod";
 
 const Reservation = ({ params }) => {
   const [classPd, setClassPd] = React.useState(true);
+  const [loading, setLoading] = React.useState(false);
     //another way of using params instead of passing params as an parameter
     const param = useParams();
-    const abortControllerRef = useRef(null);
+    // const abortControllerRef = useRef(null);
 
     //to automatically change routes
   const route = useRouter();
@@ -79,11 +80,12 @@ const Reservation = ({ params }) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
-      signal: abortControllerRef.current?.signal,
+      // signal: abortControllerRef.current?.signal,
     };
 
-    abortControllerRef.current?.abort();
-    abortControllerRef.current = new AbortController();
+    // abortControllerRef.current?.abort();
+    // abortControllerRef.current = new AbortController();
+    setLoading(true)
 
     try {
       const response = await fetch(Menu, options);
@@ -102,12 +104,13 @@ const Reservation = ({ params }) => {
         timer: 3250,
       });
       reset();
-      if (error.name === "AbortError") {
-        console.log("Aborted");
-        return;
-      }
+      // if (error.name === "AbortError") {
+      //   console.log("Aborted");
+      //   return;
+      // }
     } finally {
       reset();
+      setLoading(false)
     }
   }
 
@@ -263,7 +266,7 @@ const Reservation = ({ params }) => {
               <input
                 {...register("email")}
                 type="email"
-                placeholder="shege@gmail.com"
+                placeholder="wagmi@gmail.com"
                 id="email"
               />
               {errors.email && (
@@ -329,7 +332,7 @@ const Reservation = ({ params }) => {
               </div>
             </div>
 
-            <button type="submit">Book a table</button>
+            <button type="submit"disabled={loading}>{loading? "loading..." : "Book a table" }</button>
           </form>
         </div>
       </main>
