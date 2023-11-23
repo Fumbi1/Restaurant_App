@@ -126,7 +126,7 @@ img {
   text-decoration: none;
 }
 
-.option_tn2 {
+.option_tn23 {
   padding: 1rem 1.5rem;
   border: none;
   border-radius: 6.25rem;
@@ -134,8 +134,12 @@ img {
   transition: all 500ms;
 }
 
-.option_tn2:hover {
-  background: #7802ff;
+.option_tn24 {
+  background: #ff0256;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 6.25rem;
+  transition: all 500ms;
 }
 
 .option_text2 {
@@ -297,6 +301,10 @@ button {
   cursor: pointer;
 }
 
+button:active{
+  background: #816e51;
+}
+
 @media (max-width: 1270px) {
   .optionsaa {
     width: 95%;
@@ -368,6 +376,21 @@ button {
     z-index: 2;
     height: fit-content;
   }
+
+  .option_hover2 {
+    position: absolute;
+    width: 40%;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 1rem 1.5rem;
+    border-radius: 0.625rem;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    right: 0;
+    top: 130%;
+}
 
   .form_left {
     width: 100%;

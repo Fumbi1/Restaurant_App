@@ -163,7 +163,7 @@ const Reservation = ({ params }) => {
               </Link>
             </div>
 
-            <div className="option_tn2" onClick={Change}>
+            <div className={classPd ? "option_tn23" : "option_tn24"} onClick={Change}>
               <p className="option_text2">BOOK A TABLE</p>
             </div>
 
@@ -205,12 +205,12 @@ const Reservation = ({ params }) => {
           </div>
 
           <div className="option_tn">
-            <Link className="options_text" href="./classes">
+            <Link className="options_text" href="/classes">
               Classes
             </Link>
           </div>
 
-          <div className="option_tn2" onClick={Change}>
+          <div className={classPd ? "option_tn23" : "option_tn24"} onClick={Change}>
             <p className="option_text2">BOOK A TABLE</p>
           </div>
 

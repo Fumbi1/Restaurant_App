@@ -91,7 +91,7 @@ const Log = () => {
                 </Link>
                 </div>
 
-                <div className="option_tn2" onClick={Change}>
+                <div className={classPd ? "option_tn27" : "option_tn28"} onClick={Change}>
                 <p className="option_text2">BOOK A TABLE</p>
                 </div>
 
@@ -133,12 +133,12 @@ const Log = () => {
           </div>
 
           <div className="option_tn">
-            <Link className="options_text" href="">
+            <Link className="options_text" href="/classes">
               Classes
             </Link>
           </div>
 
-          <div className="option_tn2" onClick={Change}>
+          <div className={classPd ? "option_tn27" : "option_tn28"} onClick={Change}>
             <p className="option_text2">BOOK A TABLE</p>
           </div>
 

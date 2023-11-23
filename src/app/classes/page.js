@@ -58,11 +58,11 @@ const Classes = () => {
             </Link>
           </div>
 
-          <div className="option_tn2" onClick={Change}>
+          <div className={classPd ? "option_tn2" : "option_tn22"} onClick={Change}>
             <p className="option_text2">BOOK A TABLE</p>
           </div>
 
-          <div className={classPd ? "option_hover" : "option_hover2"}>
+          <div className={classPd ? "option_hover1" : "option_hover21"}>
             <p className="opening">Opening Hours</p>
             <div className="hover_div">
               <p>Mon</p>

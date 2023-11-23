@@ -128,8 +128,12 @@ img {
   transition: all 500ms;
 }
 
-.option_tn2:hover {
-  background: #41813b;
+.option_tn22 {
+  background: rgb(109, 119, 107);
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 6.25rem;
+  transition: all 500ms;
 }
 
 .option_text2 {
@@ -143,7 +147,7 @@ img {
   cursor: pointer;
 }
 
-.option_hover {
+.option_hover1 {
   display: none;
   position: absolute;
   width: 45%;
@@ -156,7 +160,7 @@ img {
   bottom: 130%;
 }
 
-.option_hover2 {
+.option_hover21 {
   position: absolute;
   width: 45%;
   padding: 1rem 1.5rem;
@@ -209,7 +213,7 @@ img {
     position: relative;
   }
 
-  .option_hover2 {
+  .option_hover21 {
     position: absolute;
     width: 30%;
     padding: 1rem 1.5rem;
@@ -224,7 +228,7 @@ img {
 }
 
 @media (max-width: 500px) {
-  .option_hover2 {
+  .option_hover21 {
     position: absolute;
     width: 45%;
     padding: 1rem 1.5rem;

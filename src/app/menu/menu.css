@@ -130,7 +130,7 @@ img {
   text-decoration: none;
 }
 
-.option_tn2 {
+.option_tn25 {
   padding: 1rem 1.5rem;
   border: none;
   border-radius: 6.25rem;
@@ -138,8 +138,12 @@ img {
   transition: all 500ms;
 }
 
-.option_tn2:hover {
+.option_tn26 {
   background: #7802ff;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 6.25rem;
+  transition: all 500ms;
 }
 
 .option_text2 {

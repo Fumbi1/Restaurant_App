@@ -174,7 +174,7 @@ const Menu = () => {
               </Link>
             </div>
 
-            <div className="option_tn2" onClick={Change}>
+            <div className={classPd ? "option_tn25" : "option_tn26"} onClick={Change}>
               <p className="option_text2">BOOK A TABLE</p>
             </div>
 
@@ -221,7 +221,7 @@ const Menu = () => {
             </Link>
           </div>
 
-          <div className="option_tn2" onClick={Change}>
+          <div className={classPd ? "option_tn25" : "option_tn26"} onClick={Change}>
             <p className="option_text2">BOOK A TABLE</p>
           </div>
 
