@@ -13,6 +13,7 @@ const Reservation = ({ params }) => {
   const [loading, setLoading] = React.useState(false);
     //another way of using params instead of passing params as an parameter
     const param = useParams();
+    console.log(params)
     // const abortControllerRef = useRef(null);
 
     //to automatically change routes

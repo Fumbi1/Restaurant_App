@@ -249,7 +249,7 @@ const Menu = () => {
                 <div className={item.title == "" ? "title" : "title2"}>
                   <p>{item.title}</p>
                 </div>
-                <Link className="links" href={"/menu/" + (item.meal)}>
+                <Link className="links" href={`/menu/${item.meal}`}>
                   <div className="content">
                     <div>
                       <img className="mealimage" src={item.image} alt="" />
